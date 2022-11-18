@@ -1,0 +1,148 @@
+
+@use "sass:math";
+@use 'variaveis' as v;
+
+
+%borda{  
+  margin-bottom: 1rem;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:2px solid v.$cor-marrom2;
+
+    font-family: LindenHill;
+    font-size: v.$fonte-normal;
+    color: black;
+};
+%borda_ativa{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+
+    border-bottom:2px solid v.$cor-marrom2;
+
+}
+
+.formulario_codigo{
+    // display: flex;
+    // flex-direction: column;
+    // overflow: hidden;
+    padding-bottom: 3rem;
+    // !!!
+
+
+    font-family: LindenHill;
+    font-size: v.$fonte-normal;
+    color: v.$cor-marrom-escuro;
+    display: inline-block;
+ 
+    width: 60%;
+    // height:10%;
+   margin-left: 4rem;
+    display: grid; 
+    grid-auto-flow: row dense; 
+    grid-template-columns: 1.6fr; 
+    grid-template-rows: 1.5fr 2fr 0.5fr 2fr; 
+    // border: red 2px solid;
+    gap: 0px 0px; 
+    width: 40%; 
+    height: v.$altura-conteudo; 
+    height: 380px;
+ 
+   }
+  .formulario_borda{
+      border:10px solid v.$cor-marrom2;
+      
+    background-color:white ;
+      
+  }
+  .titulo {
+      @extend %borda;
+    margin-top: 1rem;
+    width: 40%;
+    // height: 6rem;
+  
+}
+.titulo:focus{
+    @extend %borda_ativa;
+}
+.descricao {
+    width: 85%;
+    height: 4rem;
+    margin-bottom: 1rem;
+    @extend %borda;
+
+}
+.conteudo {
+    width: 85%;
+    height: 6rem;
+    margin-bottom: 1rem;
+    @extend %borda;
+}
+
+.botao{
+    width: 20%;
+    // height: 10%;
+    // padding: 6px 20px;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    left:40%;
+    font-family: LindenHill;
+    font-size: v.$fonte-normal;
+    background-color: v.$cor-fundo  ;
+    color: v.$cor-marrom-escuro;
+    border:6px solid v.$cor-marrom3;
+    border:6px solid v.$cor-verde1;
+    
+}
+.botao:hover{
+
+    border:6px solid v.$cor-marrom2;
+}
+
+
+
+
+
+
+// _____FORMULARIO________CTRL V______________
+
+.container {
+    // display: flex;
+    height: v.$altura-conteudo;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .form_field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid var(--light-border);
+    border-radius: 5px;
+  }
+  
+  .form_field.has_error {
+    border: 1px solid var(--danger);
+  }
+  
+  .error_label {
+    color: var(--danger);
+  }
+  
+  .remember_label {
+    margin: 0 10px;
+  }
+  
+
+ 
+  // .login_btn {
+  //   background-color: var(--primary-color);
+  //   color: var(--white);
+  // }
+  
+  .hello_user {
+    font-size: 2rem;
+  }

@@ -1,0 +1,86 @@
+.descricao {
+  margin-bottom: 1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(247, 223, 147, 0.8274509804);
+  font-family: LindenHill;
+  font-size: 22px;
+  color: #3b2401;
+}
+
+.titulo:focus {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(247, 223, 147, 0.8274509804);
+}
+
+.item_codigo {
+  font-family: LindenHill;
+  font-size: 22px;
+  color: #3b2401;
+  display: inline-block;
+  width: 90%;
+  margin-left: 4rem;
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1.6fr;
+  grid-template-rows: 1.5fr 2fr 0.5fr 1.5fr;
+  gap: 0px 0px;
+  width: 70%;
+  border-bottom: 4px solid rgba(105, 65, 5, 0.3764705882);
+}
+
+.formulario_borda {
+  border: 10px solid rgba(247, 223, 147, 0.8274509804);
+}
+
+.titulo_codigo {
+  margin-top: 1rem;
+  width: 40%;
+}
+
+.descricao {
+  width: 85%;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.conteudo {
+  width: 85%;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+.codigo {
+  background-color: #CCF476;
+  font-size: 20px;
+}
+
+.botao_codigo, .botao {
+  width: 20%;
+  height: 10%;
+  min-height: 50px;
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  left: 40%;
+  font-family: LindenHill;
+  font-size: 20px;
+  background-color: #f4fdd7;
+  color: #3b2401;
+  border: 6px solid #CCF476;
+  margin-right: 12px;
+}
+
+.botao_codigo:hover, .botao:hover {
+  border: 6px solid rgba(247, 223, 147, 0.8274509804);
+}
+
+.botao_codigo {
+  border: 4px solid #CCF476;
+  margin-right: 12px;
+}
+
+/*# sourceMappingURL=itens.module.css.map */
