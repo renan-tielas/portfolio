@@ -7,19 +7,15 @@ import Header from './Header'
 
 
 
-const Cabeca = () => {
+const Titulo = () => {
 
 
 
     return (
         <header>
             <Header/>
-            <Link href={`/`}>
-                <div className={styles.titulo} >
-                    Clube Serra Agroecológica
-                </div>
-            </Link>
-            <Navegacao />
+           
+           
 
         </header>
 
@@ -27,4 +23,4 @@ const Cabeca = () => {
 
 }
 
-export default Cabeca
+export default Titulo

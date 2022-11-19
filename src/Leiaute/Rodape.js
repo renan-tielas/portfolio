@@ -17,9 +17,7 @@ const Rodape = () => {
                 <div className={styles.rodape} >
                    
                     <div className={styles.secao_1}>
-                    Site para criação de postagens: edição do texto, das categorias, da aparência, e do formato da postagem
-                    Coloque autoria, ou nome do projeto, contatos, links e @s, exporte para as principais redes sociais.
-                     <br/>Compartilhe com os amigos!
+                   Contatos
                     </div>
                     
                     <div className={styles.secao_1}>

@@ -26,11 +26,13 @@ const Navegacao = () => {
       
                 <nav className={styles.navegacao} >
                    
-                    <Botao id={0} conteudo='Conheça' endereco='CriacaoPostagens' ativo={ativo} pegaClique={pegaClique} />
-                    <Botao id={1} conteudo='Cestas Agroecológicas'   endereco='Editor' ativo={ativo} pegaClique={pegaClique} />
-                    <Botao id={2} conteudo='Entregas'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
-                    <Botao id={3} conteudo='Onde Plantamos'   endereco='Editor' ativo={ativo} pegaClique={pegaClique}/>
-                </nav>
+                    <Botao id={0} conteudo='Quem sou' endereco='CriacaoPostagens' ativo={ativo} pegaClique={pegaClique} />
+                    <Botao id={1} conteudo='Tecnologias Web'   endereco='Editor' ativo={ativo} pegaClique={pegaClique} />
+                    <Botao id={2} conteudo='Projetos'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
+                    <Botao id={3} conteudo='Arte Generativa'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
+                    <Botao id={3} conteudo='Tecnologias Sociais'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
+                    
+                 </nav>
     )
 
 }
