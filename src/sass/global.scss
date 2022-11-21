@@ -1,6 +1,8 @@
 
 // $altura-conteudo:calc(100% - ($altura-nav + $altura-titulo + $altura-rodape + $altura-borda));
 
+@use 'variaveis' as v;
+@use "sass:math";
 body, html {
     border: 0;
     height: 100%;
@@ -10,6 +12,35 @@ body, html {
     box-sizing:border-box; 
     
 }
+
+
+
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: v.$cor-fundo ;
+}
+
+::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px;
+  background-color:v.$cor-fundo ;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color: v.$cor-borda1;
+  /* border: 2px solid #555555; */
+}
+
+
+
+
+
+
+
+
 form{
     width: 100%;
     // border:2px red solid;

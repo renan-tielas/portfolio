@@ -28,7 +28,9 @@ canvas.height = 600;
     
     const render = () => {
       frameCount++
+    
       draw(context, frameCount)
+   
       // animationFrameId = window.requestAnimationFrame(render)
     }
     render()

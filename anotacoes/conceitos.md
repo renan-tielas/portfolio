@@ -12,7 +12,9 @@ Programação Criativa
  "Arte generativa e interativa"
     minijogo
     refresh de quadros moveis
-
+    selecionar quadros
+    galeria de fotos
+    texto aparecendo
 
 Front
         Projetos

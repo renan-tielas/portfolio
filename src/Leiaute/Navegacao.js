@@ -30,7 +30,8 @@ const Navegacao = () => {
                     <Botao id={1} conteudo='Tecnologias Web'   endereco='Editor' ativo={ativo} pegaClique={pegaClique} />
                     <Botao id={2} conteudo='Projetos'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
                     <Botao id={3} conteudo='Arte Generativa'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
-                    <Botao id={3} conteudo='Tecnologias Sociais'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
+                    <Botao id={4} conteudo='Tecnologias Sociais'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
+                    <Botao id={5} conteudo='Contato'   endereco='Editor' ativo={ativo}  pegaClique={pegaClique}/>
                     
                  </nav>
     )
