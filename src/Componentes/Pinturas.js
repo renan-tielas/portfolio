@@ -38,7 +38,7 @@ function Flores2(estado) {
 
         // ctx.beginPath()
       
-
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 //Parametros de TEla
 // tamanho=580
 const margem=100 //experimental o efeito ainda

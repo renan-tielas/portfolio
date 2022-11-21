@@ -4,8 +4,8 @@ import useCanvas from './useCanvas'
 
 const Canvas = (props) => {  
   
-  const { draw,...rest } = props
-  const canvasRef = useCanvas(draw)
+  const { draw,particulas,devolveParticulas,...rest } = props
+  const canvasRef = useCanvas({draw,particulas,devolveParticulas})
   
   return <canvas ref={canvasRef} {...rest}/>
 }

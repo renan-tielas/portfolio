@@ -4,14 +4,20 @@
 
 import React from 'react'
 import Canvas from './Canvas'
-
-function Flores2(estado) {
+import styles from '../styles/objetos.module.css'
+function Flores2({estado,pegaClique}) {
 // particulas=[]
+
+const devolveParticulas =(particulas)=>{
+    particulas=[null]
+    console.log(particulas)
+}
+
     const draw = (ctx, frameCount) => {
       
 
         // ctx.beginPath()
-      
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
 //Parametros de TEla
 // tamanho=580
@@ -56,6 +62,9 @@ ctx.ellipse(x, y, 6, 6, 0, 0, 2 * Math.PI);
 }
 
 let particulas =[]
+
+
+
 const particula=(x,y,c) =>{
     return {"x":x,"y":y,"vx":0,"vy":0,"cor":c}
 }
@@ -235,7 +244,7 @@ atualiza();
     }
     
 
-    return <Canvas draw={draw} estado={estado}/>
+    return <Canvas className={styles.pintura}onClick={(particulas) => { pegaClique(particulas) }} devolveParticulas={devolveParticulas} draw={draw} />
 }
 
 export default Flores2

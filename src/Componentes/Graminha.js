@@ -4,8 +4,14 @@
 
 import React from 'react'
 import Canvas from './Canvas'
+import styles from '../styles/objetos.module.css'
 
-function Graminha(estado) {
+function Graminha({pegaClique}) {
+
+    
+const devolveParticulas =(particulas)=>{
+    particulas=[null]
+}
 
     const draw = (ctx, frameCount) => {
       
@@ -224,7 +230,7 @@ atualiza();
     }
 
 
-    return <Canvas draw={draw} estado={estado} />
+    return <Canvas className={styles.pintura} draw={draw} devolveParticulas={devolveParticulas} onClick={(particulas) => { pegaClique(particulas) }} />
 }
 
 export default Graminha

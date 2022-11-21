@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 
-const useCanvas = (draw) => {
+const useCanvas = ({draw,particulas,devolveParticulas}) => {
   
   const canvasRef = useRef(null)
   
@@ -40,8 +40,9 @@ canvas.height = 600;
     }
     render()
     
-    return () => {
+    return (particulas) => {
       window.cancelAnimationFrame(animationFrameId)
+      devolveParticulas(particulas);
     }
   }, [draw])
   
