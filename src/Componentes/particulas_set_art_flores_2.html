@@ -1,0 +1,221 @@
+
+   
+<canvas id="vida" width="1500" height="835">
+</canvas>
+
+<script>
+//Parametros de TEla
+// tamanho=580
+margem=50 //experimental o efeito ainda
+    tamanhox=1500-2*margem
+    tamanhoy=835-2*margem
+
+spawnx= 100
+spawny= 100
+//tamanhos são 2 margens menores que a largura do canvas
+
+
+    m=document.getElementById("vida").getContext('2d')
+    
+desenha=(x,y,c,s)=>{
+    // m.fillStyle=c
+    //  m.fillRect(x,y,s,s)
+ 
+    m.strokeStyle = c;
+
+    m.beginPath();
+m.ellipse(x, y, 6, 6, 0, 0, 2 * Math.PI);
+// m.ellipse(x, y, 13, 4, 0, 0, 2 * Math.PI);
+m.stroke();
+
+}
+
+particulas =[]
+particula=(x,y,c) =>{
+    return {"x":x,"y":y,"vx":0,"vy":0,"cor":c}
+}
+
+aleatorio =(tamanho)=>{
+    return Math.random()*tamanho+margem
+    // return Math.sin()*tamanho+margem
+}
+
+
+
+criar=(numero,cor) =>{
+    grupo=[]
+    for(let i=0; i< numero; i++){
+        // grupo.push(particula(aleatorio(tamanhox)*Math.sin(i/1000),aleatorio(tamanhoy), cor))
+        grupo.push(particula(aleatorio(tamanhox),aleatorio(tamanhoy), cor))
+        particulas.push(grupo[i])
+    }
+    return grupo
+}
+
+
+
+
+
+regra=(particulas1,particulas2,g)=>{
+    for (let i = 0; i < particulas1.length; i++) {
+        fx=0
+        fy=0
+        for (let j = 0; j < particulas2.length; j++) { 
+        a=particulas1[i]
+        b=particulas2[j]
+        dx=a.x-b.x
+        dy=a.y-b.y
+        d=Math.sqrt(dx*dx+dy*dy)
+
+
+        reducao_forca=100
+
+
+
+        if(d>0 && d <reducao_forca){
+            F =g*1/d;
+            fx += (F*dx)
+            fy += (F*dy)
+        }
+        }
+        // nova posição 
+
+
+//FISICA DAS PARTICULASSS
+
+reducao_v=0.5 // porcentagem reducao velocidades
+// desconto_reducao_x=0.5
+// desconto_reducao_y=0.45 favorece horizontalidade, com red_v=05
+
+desconto_reducao_x=0
+desconto_reducao_y=0
+
+        a.vx = (a.vx + fx)*(reducao_v-desconto_reducao_x)
+        // a.vy = (a.vy + fy)*(reducao_v-0.5)
+        a.vy = (a.vy + fy)*(reducao_v-desconto_reducao_y)
+    
+
+        //ACELERAÇÃO
+        a.x += a.vx
+        a.y += a.vy
+        // a.y += a.vy*1.8//Aceleração Artistica
+
+        //CONDIÇÃO DE BORDA com margem artistica
+        // if (a.x <= 0  ||a.x >= tamanhox   ) {a.vx*=-1}
+        // if (a.y <= 0 ||a.y >= tamanhoy  ) {a.vy*=-1}
+
+        //CONDIÇÃO DE BORDA com margem artistica
+        if (a.x <= margem/2  ||a.x >= tamanhox+margem   ) {a.vx*=-1}
+        if (a.y <= margem/2  ||a.y >= tamanhoy+margem   ) {a.vy*=-1}
+        //margem_y/2 e margem_yx/1 é anisotropico
+    }
+       
+
+
+
+}
+
+
+
+
+
+
+
+
+//PARAMETROS DE INICIO
+
+g=10
+quantidade=600
+quantidade2=200
+quantidade3=600
+
+quantidade4=20
+
+laranja=criar(quantidade,"orange")
+marrom=criar(quantidade2,"brown")
+verde=criar(quantidade3,"teal")
+
+// verde=criar(quantidade4,"green")
+// amarela=criar(quantidade4,"yellow")
+
+
+
+
+
+atualiza = ()=> {
+    
+    // regra(laranja,laranja,-0.1)
+    // regra(laranja,marrom,-0.01)
+    // regra(marrom,laranja,0.1)
+    
+    // regra(laranja,laranja,0.1)
+    // regra(marrom,laranja,0.15)
+    // regra(verde,verde,-0.7)
+    // regra(verde,laranja,-0.2)
+    // regra(laranja,verde,-0.1)
+
+
+    // regra(laranja,laranja,-0.05)
+    // regra(laranja,marrom,-0.1)
+    // regra(marrom,laranja,0.1)
+    // regra(marrom,verde,0.1)
+    // regra(verde,marrom,0.1)
+    // regra(verde,verde,-0.05)
+
+    
+    
+    regra(laranja,laranja,0.01)
+    regra(laranja,marrom,-0.2)
+    regra(laranja,verde,-0.3)
+
+    regra(verde,verde,0.05)
+    regra(verde,marrom,-0.3)
+    regra(verde,laranja,4)
+
+    regra(marrom,laranja,-0.4)
+    // regra(marrom,marrom,-0.2)
+    regra(marrom,verde,-0.3)
+    // regra(laranja,marrom,-0.1)
+    // regra(marrom,laranja,0.1)
+    // regra(marrom,verde,0.1)
+    // regra(verde,marrom,0.1)
+    // regra(verde,verde,-0.05)
+  
+    // m.clearRect(margem,margem,tamanhox,tamanhoy)
+
+   
+    // ARTISTICO BLUR
+
+
+    desenha(0,0,"white",0)
+    for (i = 0; i < particulas.length; i++) {
+        desenha(particulas[i].x,particulas[i].y,particulas[i].cor,4)
+      
+        
+    }
+    requestAnimationFrame(atualiza)
+}
+
+atualiza();
+
+
+
+
+
+// GRUPOS DE REGRAS 
+
+// regra(laranja,laranja,g)
+// regra(laranja,marrom,1)
+// regra(marrom,marrom,-10000) 
+
+//CAMINHOS
+    // regra(laranja,laranja,0.1)
+    // regra(marrom,laranja,0.2)
+    // regra(marrom,verde,0.2)
+    // regra(verde,verde,-0.7)
+    // regra(verde,laranja,-0.2)
+    // regra(laranja,verde,-0.1)
+    // regra(verde,amarela,2)
+    // regra(amarela,laranja,6)
+</script>
+

@@ -7,8 +7,8 @@ animações de transição
 
 layout dupla tela
 
-esq
-prints
+        esq
+        prints
 
-direita
-texto
+        direita
+        texto

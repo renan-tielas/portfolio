@@ -13,7 +13,7 @@ const Botao = ({id,conteudo,endereco,ativo,pegaClique}) => {
 // }
     return (
 <Link href={`/${endereco}`}>
-        <button className={ativo==id ? styles.botao_ativo : styles.botao}
+        <button className={ativo==id ? styles.botao_ativo : styles.botao_h}
         onClick={()=>pegaClique(id)}  >
             {conteudo}
         </button>

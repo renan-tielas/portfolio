@@ -31,12 +31,124 @@ $fonte-philosopher: Philosopher;
 $fonte-insani: Insani;
 $fonte-reey: Reey;
 
+$yellow-green-crayola: #cfee9eff;
+$green-crayola: #DDFCAD;
+
+
+$mindaro: #DBFE87;
+$mindaro-sombra:#374022;
+
+
+
+$branco-z:#F2F2F2;
+$cinza-z:#262625;
+$preto-z: #0D0D0C;
+$branco-fantasma: #F7F7FF;
+$preto:#080708;
+$cinza-escuro:#11151C;
+
+/* Color Theme Swatches in Hex */
+$color-theme_IMG_20220214_134430-1-hex: #4F731A;
+$color-theme_IMG_20220214_134430-2-hex: #E2D9D0;
+$color-theme_IMG_20220214_134430-3-hex: #3E540C;
+$color-theme_IMG_20220214_134430-4-hex: #F2EDD5;
+$color-theme_IMG_20220214_134430-5-hex: #E4AB64;
+
+
+/* Color Theme Swatches in Hex */
+$vintage-card-1-hex: #2E2629;
+$vintage-card-2-hex: #84ABA0;
+$vintage-card-3-hex: #FFF8C9;
+$vintage-card-4-hex: #F39A62;
+$vintage-card-5-hex: #F06060;
+
+
+/* Color Theme Swatches in Hex */
+$color-theme_Lazy-love_3-1-hex: #6C786B;
+$color-theme_Lazy-love_3-2-hex: #DFD7B2;
+$color-theme_Lazy-love_3-3-hex: #D1CCAF;
+$color-theme_Lazy-love_3-4-hex: #D2B88E;
+$color-theme_Lazy-love_3-5-hex: #F2DCC2;
+
+/* Color Theme Swatches in Hex */
+$PROJECT71-DESERT-SALT-1-hex: #F2F2F0;
+$PROJECT71-DESERT-SALT-2-hex: #D9CF9C;
+$PROJECT71-DESERT-SALT-3-hex: #594302;
+$PROJECT71-DESERT-SALT-4-hex: #A6935B;
+$PROJECT71-DESERT-SALT-5-hex: #402A01;
+
+$ivory: #FFFCE9ff;
+$sunglow: #FFD248ff;
+$bistre: #332A1Fff;
+$spanish-gray: #8A9090ff;
+$bright-yellow-crayola: #FFAD28ff;
+$independence: #384A62ff;
+
+$unbleached-silk: #FADAC5ff;
+$bole: #764C44ff;
+$old-burgundy: #432C2Aff;
+$melon: #E7AFA2ff;
+$old-rose: #B47E80ff;
+$laranja:#be740c;
+$laranja:#F4AC45;
+$vinho:#A50104;
+$verde-folha: #588157;
+$branco-fantasma: #F7F7FF;
+$preto:#080708;
+$cinza-escuro:#11151C;
+
+$rosa:#FFB8D1;
+$rosa2:#E8AEB7;
+
+$asparagus: #8dab7fff;
+$steel-teal: #587b7fff;
+$black-chocolate: #1e2019ff;
+$kombu-green: #394032ff;
+
+$limao:#ACF445;
+$neve:#FFFAFB;
+$roxo:#3A3042;
+$figado:#564946;
+
 $cor-fonte:#3b2401;
 
-$cor-fundo: #fcfdf2;
-$cor-fundo: #ffffff;
-$cor-fundo: #f0fcc7;
-$cor-fundo: #f4fdd7;
+
+
+
+$cor-fundo: &branco-fantasma;
+
+
+$cor-borda1:$PROJECT71-DESERT-SALT-3-hex;
+$cor-borda1:$bistre;
+
+$cor-borda2:$sunglow;
+
+
+
+
+
+
+
+
+
+
+
+
+
+$gradient-top: linear-gradient(30deg, #FFFCE9ff, #FFD248ff,rgb(255, 186, 58));
+$gradient-right: linear-gradient(90deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-bottom: linear-gradient(180deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-left: linear-gradient(270deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-top-right: linear-gradient(45deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-bottom-right: linear-gradient(135deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-top-left: linear-gradient(225deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-bottom-left: linear-gradient(315deg, #FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+$gradient-radial: radial-gradient(#FFFCE9ff, #FFD248ff, #332A1Fff, #8A9090ff, #FFAD28ff, #384A62ff);
+
+
+
+
+
 
 // $cor-fundo: #EBEEDA;
 
