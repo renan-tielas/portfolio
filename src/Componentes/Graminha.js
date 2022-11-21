@@ -5,14 +5,14 @@
 import React from 'react'
 import Canvas from './Canvas'
 
-function Graminha() {
+function Graminha(estado) {
 
     const draw = (ctx, frameCount) => {
       
 
         // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
         // ctx.fillStyle = '#000000'
-        // ctx.beginPath()
+        ctx.beginPath()
         // ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI)
         // ctx.fill()
 
@@ -36,7 +36,7 @@ const desenha=(x,y,c,s)=>{
         ctx.beginPath();
               ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
-              ctx.stroke();
+            //   ctx.stroke();
 particulas=[];
               petalas=criar(quantidade,"orange")
               // let flor=criar(quantidade2,"brown")
@@ -55,7 +55,7 @@ particulas=[];
     ctx.beginPath();
 ctx.ellipse(x, y, 6, 6, 0, 0, 2 * Math.PI);
 // ctx.ellipse(x, y, 13, 4, 0, 0, 2 * Math.PI);
-ctx.stroke();
+// ctx.stroke();
 
 }
 
@@ -205,8 +205,10 @@ const atualiza = ()=> {
 
     desenha(0,0,"white",0)
     for (let i = 0; i < particulas.length; i++) {
-        desenha(particulas[i].x,particulas[i].y+200,particulas[i].cor,4)
+        // desenha(particulas[i].x,particulas[i].y+200,particulas[i].cor,4)
+        desenha(Math.floor(particulas[i].x) ,Math.floor(particulas[i].y)+200,particulas[i].cor,4);
       
+        ctx.stroke()
         
     }
 
@@ -222,7 +224,7 @@ atualiza();
     }
 
 
-    return <Canvas draw={draw} />
+    return <Canvas draw={draw} estado={estado} />
 }
 
 export default Graminha

@@ -5,17 +5,13 @@
 import React from 'react'
 import Canvas from './Canvas'
 
-function Flores2() {
-
+function Flores2(estado) {
+// particulas=[]
     const draw = (ctx, frameCount) => {
       
 
-        // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-        // ctx.fillStyle = '#000000'
         // ctx.beginPath()
-        // ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI)
-        // ctx.fill()
-
+      
 
 //Parametros de TEla
 // tamanho=580
@@ -33,10 +29,10 @@ const desenha=(x,y,c,s)=>{
     contador++
 
     if (contador%30000==0){
-        ctx.beginPath();
+       
               ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
-              ctx.stroke();
+            //   ctx.stroke();
 particulas=[];
               petalas=criar(quantidade,"orange")
               // let flor=criar(quantidade2,"brown")
@@ -55,7 +51,7 @@ particulas=[];
     ctx.beginPath();
 ctx.ellipse(x, y, 6, 6, 0, 0, 2 * Math.PI);
 // ctx.ellipse(x, y, 13, 4, 0, 0, 2 * Math.PI);
-ctx.stroke();
+// ctx.stroke();
 
 }
 
@@ -222,9 +218,9 @@ const atualiza = ()=> {
 
     desenha(0,0,"white",0)
     for (let i = 0; i < particulas.length; i++) {
-        desenha(particulas[i].x,particulas[i].y,particulas[i].cor,4)
+        desenha(Math.floor(particulas[i].x) ,Math.floor(particulas[i].y),particulas[i].cor,4);
       
-        
+        ctx.stroke()
     }
 
         requestAnimationFrame(atualiza)
@@ -237,9 +233,15 @@ atualiza();
 
 
     }
+    
 
-
-    return <Canvas draw={draw} />
+    return <Canvas draw={draw} estado={estado}/>
 }
 
 export default Flores2
+
+
+
+
+
+// TALVEZ SEJA POSSIVEL BOTAR TODOS AS PINTURAS NO MESMO COMPONENTE, E ALTERNAR DE ACORDO COM A CONTAGEM

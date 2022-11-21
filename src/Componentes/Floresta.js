@@ -5,7 +5,7 @@
 import React from 'react'
 import Canvas from './Canvas'
 
-function Floresta(margem,tela_largura,tela_altura,offset_x,offset_y,reducao_alcance_gravitacional,g,
+function Floresta(estado,margem,tela_largura,tela_altura,offset_x,offset_y,reducao_alcance_gravitacional,g,
      quantidade,cor,quantidade2,cor2,quantidade3,cor3,quantidade4,cor4,parametros_atracao,temporizador) {
 
     const draw = (ctx, frameCount) => {
@@ -13,7 +13,7 @@ function Floresta(margem,tela_largura,tela_altura,offset_x,offset_y,reducao_alca
 
         // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
         // ctx.fillStyle = '#000000'
-        // ctx.beginPath()
+        ctx.beginPath()
         // ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI)
         // ctx.fill()
 
@@ -43,7 +43,7 @@ const desenha=(x,y,c,s)=>{
         ctx.beginPath();
               ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
-              ctx.stroke();
+            //   ctx.stroke();
 particulas=[];
               petalas=criar(quantidade,"orange")
               // let flor=criar(quantidade2,"brown")
@@ -61,7 +61,7 @@ particulas=[];
     ctx.beginPath();
 ctx.ellipse(x, y, 6, 6, 0, 0, 2 * Math.PI);
 // ctx.ellipse(x, y, 13, 4, 0, 0, 2 * Math.PI);
-ctx.stroke();
+// ctx.stroke();
 
 }
 
@@ -111,7 +111,7 @@ const regra=(particulas1,particulas2,g)=>{
         if(d>0 && d <reducao_alcance_gravitacional){
             let F =g*1/d;
             fx += (F*dx)
-            fy += (F*dy)
+            fy += (F*dy*1.4)
         }
         }
         // nova posição 
@@ -165,7 +165,7 @@ const quantidade=30*1
 const quantidade2=50*1
 const quantidade3=40*1
 
-const quantidade4=6*1
+const quantidade4=0*1
 // folhas=criar(quantidade4,"green")
 // amarela=criar(quantidade4,"yellow")
 
@@ -175,7 +175,7 @@ const quantidade4=6*1
 
 let petalas=criar(quantidade,"orange")
 // let flor=criar(quantidade2,"brown")
-let flor=criar(quantidade2,"#A50104")
+let flor=criar(quantidade2,"#66441b")
 // let folhas=criar(quantidade3,"#332A1Fff")    
 // let folhas=criar(quantidade3,"#db5c35")
 let folhas=criar(quantidade3,"rgba(235, 98, 18, 0.664)")
@@ -232,8 +232,9 @@ const atualiza = ()=> {
     const offset_y=100
     for (let i = 0; i < particulas.length; i++) {
 
-        desenha(particulas[i].x+offset_x,particulas[i].y+offset_y,particulas[i].cor,4)
-      
+        // desenha(particulas[i].x+offset_x,particulas[i].y+offset_y,particulas[i].cor,4)
+        desenha(Math.floor(particulas[i].x+offset_x) ,Math.floor(particulas[i].y+offset_y),particulas[i].cor,4);
+        ctx.stroke()
         
     }
 
@@ -249,7 +250,7 @@ atualiza();
     }
 
 
-    return <Canvas draw={draw} />
+    return <Canvas draw={draw} estado={estado} />
 }
 
 export default Floresta

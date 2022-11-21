@@ -31,7 +31,7 @@
   align-self: center;
   background-color: branco-fantasma;
   top: 2rem;
-  left: 4rem;
+  left: 6rem;
   position: relative;
 }
 
@@ -51,6 +51,7 @@
   background-color: branco-fantasma;
   position: relative;
   top: -2rem;
+  left: -4rem;
 }
 
 .topo {

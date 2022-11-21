@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 
-const useCanvas = draw => {
+const useCanvas = (draw) => {
   
   const canvasRef = useRef(null)
   
@@ -8,9 +8,14 @@ const useCanvas = draw => {
     
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
+
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height)
+    context.beginPath()
+    //   ctx.stroke();
+// particulas=[];
     let frameCount = 0
     let animationFrameId
-    canvas.width  = 600;
+    canvas.width  = 700;
 canvas.height = 600;
     // function resizeCanvasToDisplaySize(canvas) {
     
